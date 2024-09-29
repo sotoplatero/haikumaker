@@ -6,7 +6,10 @@ import tailwind from '@astrojs/tailwind';
 
 import sitemap from '@astrojs/sitemap';
 
+import db from '@astrojs/db';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte(), tailwind(), sitemap()]
+  output: 'server',
+  integrations: [svelte(), tailwind(), sitemap(), db()]
 });
