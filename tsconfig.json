@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "target": "ES2018",    
     "baseUrl": "./",
     "paths": {
       "@*": ["src/*"]

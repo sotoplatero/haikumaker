@@ -1,7 +1,9 @@
 ---
-import Layout from '@layouts/Layout.astro';
 import { actions } from 'astro:actions';
 import { Heart, Clipboard  } from 'lucide-astro';
+
+import Form from '@components/Form.astro';
+import Layout from '@layouts/Layout.astro';
 
 const result = Astro.getActionResult(actions.createHaiku);
 
@@ -9,17 +11,21 @@ const result = Astro.getActionResult(actions.createHaiku);
 
 <Layout title=''>
     <div class="max-w-md mx-auto">
-
-        <form method="POST" action={actions.createHaiku} class="space-y-4">
-            <input type="text" name="text" class="input input-bordered w-full" required>
-            <button class="btn btn-primary">Write</button>
-        </form>
+        <div class="prose prose-lg">
+            <h1 class="text-center">Haiku Generator</h1>
+            <p></p>
+        </div>
+        <div class="card bg-orange-100 w-full">
+            <div class="card-body">
+              <Form action={actions.createHaiku} />
+            </div>
+        </div>        
 
         <section class="mt-16">
             {result && !result.error && (
                 <div class="space-y-8">
-                    {result.data.poems.map((poem, index) => (
-                        <div class="text-lg">
+                    {result.data.poems.map((poem) => (
+                        <div class="flex items-center justify-between text-lg">
                             <p class="whitespace-pre-line">{poem}</p>
                             <div class="card-actions mt-4">
                                 <button class="btn btn-square btn-sm"><Heart class="size-5"/> </button>

@@ -1,27 +1,31 @@
 ---
+import {Sparkles, Star} from 'lucide-astro'
 import Layout from '../layouts/Layout.astro';
+import Form from '@components/Form.astro';
 import Landing from '@components/Landing.md'
 import { actions } from 'astro:actions';
 ---
 
 <Layout>
 	<main>
-		<div class="hero py-24 bg-base-200 rounded-lg">
+		<div class="hero py-24 bg-orange-100 rounded-lg">
 			<div class="hero-content text-center">
 			  <div class="max-w-md">
-				<h1 class="text-5xl font-bold">Generate Beautiful Haiku Instantly</h1>
+				<h1 class="text-6xl font-bold">Generate Beautiful <span class="text-orange-500">Haiku</span> Instantly</h1>
 				<p class="py-6">
-					Unleash your creativity and craft timeless haiku poems effortlessly. Haikumaker helps you find the perfect words to capture fleeting moments in just 17 syllables.
+					Create timeless haiku effortlessly. Capture fleeting moments in perfect 5-7-5 form, unleashing your creativity in just 17 syllables.
 				</p>
-				<form method="POST" action={ '/generator' + actions.createHaiku}  class="text-center space-y-4">
-					<input type="text" name="text" class="input input-bordered w-full" required>
-					<button class="btn btn-primary btn-lg forn-bold">Write</button>
-				</form>
+				<Form action={'/generator' +  actions.createHaiku} />				
+				<!-- <form method="POST" action={ '/generator' + actions.createHaiku}  class="text-center space-y-4">
+					<label for="text" class="font-semibold">Inspiration for haiku:</label>
+					<input type="text" name="text" class="input input-warning input-bordered w-full" placeholder="Share a word or phrase that inspires your haiku.." required>
+					<button class="btn btn-error btn-lg fort-bold text-white"><Sparkles/>Write</button>
+				</form> -->
 			  </div>
 			</div>
 		  </div>
 	</main>
-	<article class="prose prose-xl mt-16">
+	<article class="prose prose-lg mt-16">
 		<Landing/>
 	</article>
 </Layout>

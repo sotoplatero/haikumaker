@@ -1,10 +1,8 @@
 ## **Discover the Art of Haiku Writing**
 
-Welcome to **HaikuMaker**, where simplicity meets creativity. 
+Welcome to HaikuMaker, simplicity made creative. A unique platform designed to help you compose authentic and captivating haiku poems effortlessly.
 
-HaikuMaker is a unique platform designed to help you compose authentic and captivating haiku poems effortlessly. 
-
-Whether you're a seasoned poet or just exploring the world of haiku for the first time, our tool guides you through each step of creating this traditional form of poetry, known for its elegance and evocative power.
+Whether you are an experienced poet or are exploring the world of haiku for the first time, our tool supports you in creating this poetry tradition, known for its elegance and evocative power.
 
 ## **What Is a Haiku?**
 

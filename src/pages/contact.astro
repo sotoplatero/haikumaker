@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro"
+---
+<Layout title="Contact Me - HaikuMaker" description="Get in touch to request custom collection, share feedback, or inquire about our haiku poem services!">
+
+    <article class="prose mx-auto">
+        
+        <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-md mx-auto space-y-4">
+            <h1 class="">Contact Me</h1>
+            <p>Write me and we talk.</p>
+            
+            <input type="hidden" name="access_key" value="0918522e-5af2-4c6f-b173-e00aea51b53c">
+            <input type="hidden" name="from_name" value="HaikuMaker">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            
+            <label class="block w-full">
+                <span class="label-text">Name</span>
+                <input type="text" name="name" class="input input-bordered w-full" required>
+            </label>
+
+            <label class="block w-full">
+                <span class="label-text">Email</span>
+                <input type="email" name="email" class="input input-bordered w-full" required>
+            </label>
+
+            <label class="block w-full">
+                <span class="label-text">Message</span>
+                <textarea name="message" class="textarea textarea-bordered w-full" rows="7" required></textarea>
+            </label>
+        
+            <button type="submit" class="btn btn-primary">Contact Me</button>
+        
+        </form>
+    </article>
+</Layout>

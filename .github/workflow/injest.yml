@@ -1,0 +1,33 @@
+name: Run Jest Function Every 30 Minutes
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  run-jest-function:
+    runs-on: ubuntu-latest
+
+    env:  # Define environment variables here
+      NODE_ENV: production
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ASTRO_DB_REMOTE_URL: ${{ secrets.ASTRO_DB_REMOTE_URL }}
+      ASTRO_DB_APP_TOKEN: ${{ secrets.ASTRO_DB_APP_TOKEN }}
+
+    steps:
+      # Comprobar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21'  # Specify the version of Node.js you want to use
+
+      # Instalar dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # Ejecutar el archivo jest.js
+      - name: Run injest function
+        run: node injest.js

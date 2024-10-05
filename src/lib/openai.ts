@@ -18,17 +18,25 @@ export const chat = async ( prompts: {system: string, user:string } ) => {
   });
 
   const content = completion.choices[0].message.content ?? ''
+  console.log(content)
 
   return JSON.parse(content)
 }
 
 export const writehaiku = async ( text: string ) => {
 
-  const system = 'Eres un poeta de poemas haiku con mas de 20 años de experiencia. Tu tarea es escribir 5 poemas haiku, cumple estrictamente las reglas para un poema haiku y crea una obra artisticamente impresionante sobre el tema definido por el usuario. Responde un arreglo JSON { poems: [ ]} sin el bloque de codigo con los poemas en texto plano.'
-  const user = text
-  const {poems} =  await chat({ system, user })
+    const system = 'You are a haiku poet with more than 20 years of experience. Your task is to write 5 haiku poems on the topic defined by the user. Strictly follow the rules of haiku poetry and create an artistically impressive work. Respond with a JSON array { poems: [ ] } without the code block, including the poems in plain text and using line breaks.'
+    const user = text
+    const {poems} =  await chat({ system, user })
 
-  console.log(poems)
+    return poems
+}
 
-  return poems
+export const writePoem = async ( text: string ) => {
+
+    const system = 'You are a haiku poet with more than 20 years of experience. Your task is to write a haiku poems on the topic defined by the user. Strictly follow the rules of haiku poetry and create an artistically impressive work. Respond the poems in plain text and using line breaks.'
+    const user = text
+    const {poems} =  await chat({ system, user })
+
+    return poems
 }

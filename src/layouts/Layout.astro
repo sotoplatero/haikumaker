@@ -1,5 +1,6 @@
 ---
 import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -7,8 +8,8 @@ interface Props {
 }
 
 const { 
-	title = 'Create Beautiful Haiku Poems Effortlessly Online - Haikumaker', 
-	description = "Compose haiku poems in seconds with Haikumaker. Whether it's a haiku for flowers, autumn, or spring, our easy-to-use platform helps you capture fleeting moments in classic 5-7-5 form."
+	title = 'Haiku Poems Generator Online - Haikumaker', 
+	description = "Create haiku poems in seconds with Haikumaker. Whether it's a haiku for flowers, autumn, or spring, our easy-to-use maker helps you capture fleeting moments in classic 5-7-5 form."
 } = Astro.props;
 ---
 
@@ -18,14 +19,21 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E🍂%3C/text%3E%3C/svg%3E">
 		<meta name="generator" content={Astro.generator} />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">		
 		<title>{title}</title>
 		<meta name="description" content={description}>
 	</head>
-	<body class="w-full max-w-screen-md mx-auto px-4">
+	<body >
 		<Header/>
-		<slot />
+		<div class="w-full max-w-screen-md mx-auto px-4">
+			<slot />
+		</div>
+		<Footer/>
 	</body>
 </html>
 
